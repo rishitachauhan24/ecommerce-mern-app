@@ -518,6 +518,108 @@ const sampleProducts = [
     rating: 4.7,
     numReviews: 189
   }
+  ,
+  // ==================== MORE PRODUCTS (10 New) ====================
+  {
+    name: 'Instant Pot Duo',
+    description: '7-in-1 Electric Pressure Cooker for fast cooking',
+    price: 5999,
+    image: 'https://images.unsplash.com/photo-1604908177522-4d0a6d0b3c14?w=500',
+    category: 'Home',
+    stock: 40,
+    rating: 4.6,
+    numReviews: 82
+  },
+  {
+    name: 'Wireless Earbuds Pro',
+    description: 'True wireless earbuds with active noise cancellation',
+    price: 3999,
+    image: 'https://images.unsplash.com/photo-1585386959984-a415522c2b48?w=500',
+    category: 'Electronics',
+    stock: 85,
+    rating: 4.5,
+    numReviews: 210
+  },
+  {
+    name: 'Kids Building Blocks Set',
+    description: 'Creative building blocks for ages 3+',
+    price: 1299,
+    image: 'https://images.unsplash.com/photo-1582719478250-1c3a9f1e2a6a?w=500',
+    category: 'Toys',
+    stock: 150,
+    rating: 4.7,
+    numReviews: 64
+  },
+  {
+    name: 'Facial Cleanser',
+    description: 'Gentle daily facial cleanser for all skin types',
+    price: 599,
+    image: 'https://images.unsplash.com/photo-1580281657523-4b98b0a2f1b0?w=500',
+    category: 'Beauty',
+    stock: 200,
+    rating: 4.4,
+    numReviews: 48
+  },
+  {
+    name: 'Electric Kettle',
+    description: '1.7L stainless steel electric kettle with auto shut-off',
+    price: 999,
+    image: 'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500',
+    category: 'Home',
+    stock: 95,
+    rating: 4.3,
+    numReviews: 76
+  },
+  {
+    name: 'Gaming Chair',
+    description: 'Ergonomic gaming chair with lumbar support',
+    price: 7999,
+    image: 'https://images.unsplash.com/photo-1587202372775-7b5d1b7f7a1e?w=500',
+    category: 'Furniture',
+    stock: 25,
+    rating: 4.6,
+    numReviews: 39
+  },
+  {
+    name: 'Smart Light Bulb (4-pack)',
+    description: 'Wi-Fi enabled RGB smart bulbs, control via app',
+    price: 2499,
+    image: 'https://images.unsplash.com/photo-1512446810190-8c9f6d3f8b9d?w=500',
+    category: 'Home',
+    stock: 120,
+    rating: 4.5,
+    numReviews: 58
+  },
+  {
+    name: 'Stainless Steel Cookware Set',
+    description: '10-piece stainless steel cookware set with glass lids',
+    price: 8999,
+    image: 'https://images.unsplash.com/photo-1544986581-efac024faf62?w=500',
+    category: 'Home',
+    stock: 30,
+    rating: 4.7,
+    numReviews: 22
+  },
+  {
+    name: 'Portable Projector',
+    description: 'Mini HD projector for home theater and presentations',
+    price: 6499,
+    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500',
+    category: 'Electronics',
+    stock: 28,
+    rating: 4.4,
+    numReviews: 37
+  },
+  {
+    name: 'Electric Toothbrush',
+    description: 'Rechargeable electric toothbrush with 3 cleaning modes',
+    price: 1499,
+    image: 'https://images.unsplash.com/photo-1588776814546-1c9af6f3f9d3?w=500',
+    category: 'Health',
+    stock: 140,
+    rating: 4.5,
+    numReviews: 91
+  }
 ];
 
 const seedDatabase = async () => {
