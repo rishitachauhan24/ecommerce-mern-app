@@ -26,6 +26,22 @@ const api = axios.create({
   baseURL: getApiBase(),
 });
 
-// Interceptors can be added here if needed
+// Attach token from localStorage to Authorization header for protected routes
+api.interceptors.request.use(
+  (config) => {
+    try {
+      const stored = localStorage.getItem('token');
+      // stored may be the raw token string
+      if (stored) {
+        config.headers = config.headers || {};
+        config.headers.Authorization = `Bearer ${stored}`;
+      }
+    } catch (e) {
+      // ignore (localStorage not available in some environments)
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 export default api;
