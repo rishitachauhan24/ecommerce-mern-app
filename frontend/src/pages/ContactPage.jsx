@@ -39,7 +39,7 @@ const ContactPage = () => {
     return (
         <div>
             {/* Header */}
-            <div className="page-header" style={{ 
+            <div className="page-header contact-hero" style={{ 
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                 color: 'white'
             }}>

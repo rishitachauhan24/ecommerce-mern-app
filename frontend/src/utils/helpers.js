@@ -1,7 +1,7 @@
 // This file contains utility functions used throughout the application.
 
 export const formatCurrency = (amount) => {
-    return `$${amount.toFixed(2)}`;
+    return `₹${amount.toFixed(2)}`;
 };
 
 export const calculateTotal = (cartItems) => {

@@ -21,6 +21,7 @@ import ShippingInfoPage from './pages/ShippingInfoPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ManageProducts from './pages/admin/ManageProducts';
 import ManageOrders from './pages/admin/ManageOrders';
+import AddProduct from './pages/admin/AddProduct';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
@@ -46,19 +47,23 @@ const App = () => {
               <Route path="/signup" element={<SignupPage />} />
               <Route 
                 path="/admin" 
-                element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} 
+                element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} 
               />
               <Route 
                 path="/admin/dashboard" 
-                element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} 
+                element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} 
               />
               <Route 
                 path="/admin/manage-products" 
-                element={<ProtectedRoute><ManageProducts /></ProtectedRoute>} 
+                element={<ProtectedRoute adminOnly><ManageProducts /></ProtectedRoute>} 
               />
               <Route 
                 path="/admin/manage-orders" 
-                element={<ProtectedRoute><ManageOrders /></ProtectedRoute>} 
+                element={<ProtectedRoute adminOnly><ManageOrders /></ProtectedRoute>} 
+              />
+              <Route
+                path="/admin/add-product"
+                element={<ProtectedRoute adminOnly><AddProduct /></ProtectedRoute>}
               />
             </Routes>
           </div>

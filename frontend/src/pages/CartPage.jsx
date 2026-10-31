@@ -53,7 +53,7 @@ const CartPage = () => {
               <div className="cart-item-details">
                 <h3>{item.name}</h3>
                 <p style={{ color: 'var(--text-secondary)' }}>{item.category}</p>
-                <div className="cart-item-price">${item.price.toFixed(2)}</div>
+                <div className="cart-item-price">₹{item.price.toFixed(2)}</div>
               </div>
               <div className="cart-item-actions">
                 <div className="quantity-control">
@@ -74,7 +74,7 @@ const CartPage = () => {
                   </button>
                 </div>
                 <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--primary-color)', minWidth: '100px', textAlign: 'right' }}>
-                  ${(item.price * item.quantity).toFixed(2)}
+                  ₹{(item.price * item.quantity).toFixed(2)}
                 </div>
                 <button
                   onClick={() => removeFromCart(item._id)}
@@ -92,7 +92,7 @@ const CartPage = () => {
           <h2>Order Summary</h2>
           <div className="summary-row">
             <span>Subtotal ({cartItems.length} items):</span>
-            <span>${calculateTotal()}</span>
+            <span>₹{calculateTotal()}</span>
           </div>
           <div className="summary-row">
             <span>Shipping:</span>
@@ -100,11 +100,11 @@ const CartPage = () => {
           </div>
           <div className="summary-row">
             <span>Tax (Estimated):</span>
-            <span>${(calculateTotal() * 0.1).toFixed(2)}</span>
+            <span>₹{(calculateTotal() * 0.1).toFixed(2)}</span>
           </div>
           <div className="summary-row total">
             <span>Total:</span>
-            <span>${(parseFloat(calculateTotal()) + parseFloat(calculateTotal()) * 0.1).toFixed(2)}</span>
+            <span>₹{(parseFloat(calculateTotal()) + parseFloat(calculateTotal()) * 0.1).toFixed(2)}</span>
           </div>
 
           <Link to="/checkout" className="btn btn-primary" style={{ width: '100%', marginTop: '1.5rem' }}>

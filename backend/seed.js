@@ -545,7 +545,7 @@ const sampleProducts = [
     description: 'Creative building blocks for ages 3+',
     price: 1299,
     image: 'https://images.unsplash.com/photo-1582719478250-1c3a9f1e2a6a?w=500',
-    category: 'Toys',
+    category: 'Other',
     stock: 150,
     rating: 4.7,
     numReviews: 64
@@ -555,7 +555,7 @@ const sampleProducts = [
     description: 'Gentle daily facial cleanser for all skin types',
     price: 599,
     image: 'https://images.unsplash.com/photo-1580281657523-4b98b0a2f1b0?w=500',
-    category: 'Beauty',
+    category: 'Other',
     stock: 200,
     rating: 4.4,
     numReviews: 48
@@ -575,7 +575,7 @@ const sampleProducts = [
     description: 'Ergonomic gaming chair with lumbar support',
     price: 7999,
     image: 'https://images.unsplash.com/photo-1587202372775-7b5d1b7f7a1e?w=500',
-    category: 'Furniture',
+    category: 'Other',
     stock: 25,
     rating: 4.6,
     numReviews: 39
@@ -615,7 +615,7 @@ const sampleProducts = [
     description: 'Rechargeable electric toothbrush with 3 cleaning modes',
     price: 1499,
     image: 'https://images.unsplash.com/photo-1588776814546-1c9af6f3f9d3?w=500',
-    category: 'Health',
+    category: 'Other',
     stock: 140,
     rating: 4.5,
     numReviews: 91

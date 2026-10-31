@@ -35,7 +35,7 @@ const ProductDetailPage = () => {
         <h1>{product.name}</h1>
         <img src={product.image} alt={product.name} />
         <p>{product.description}</p>
-        <p>Price: ${product.price}</p>
+        <p>Price: ₹{product.price}</p>
         {/* Add to cart button can be added here */}
       </div>
       <Footer />

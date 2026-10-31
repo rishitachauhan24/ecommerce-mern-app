@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaBoxOpen, FaCalendarAlt, FaMapMarkerAlt, FaShoppingBag } from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
 import { getMyOrders } from '../services/orderService';
 
@@ -26,29 +28,67 @@ const OrderHistoryPage = () => {
   }, [user]);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (error) return <div className="container order-history-page"><div className="alert alert-error">{error}</div></div>;
 
   return (
-    <div>
-      <h1>Order History</h1>
+    <div className="container order-history-page">
+      <div className="order-history-header">
+        <div>
+          <p className="eyebrow">YOUR ACCOUNT</p>
+          <h1>Order History</h1>
+          <p className="order-history-subtitle">Track your purchases and revisit everything you have ordered.</p>
+        </div>
+        <div className="order-count">
+          <FaShoppingBag />
+          <strong>{orders.length}</strong>
+          <span>{orders.length === 1 ? 'order' : 'orders'}</span>
+        </div>
+      </div>
+
       {orders.length === 0 ? (
-        <p>No orders found.</p>
+        <div className="order-empty-state">
+          <div className="empty-icon"><FaBoxOpen /></div>
+          <h2>No orders yet</h2>
+          <p>Your future purchases will appear here once you place your first order.</p>
+          <Link to="/products" className="btn btn-primary">Start Shopping</Link>
+        </div>
       ) : (
-        <ul>
+        <div className="orders-list">
           {orders.map(order => (
-            <li key={order._id}>
-              <h2>Order ID: {order._id}</h2>
-              <p>Total Amount: ${order.totalAmount}</p>
-              <p>Status: {order.status}</p>
-              <h3>Products:</h3>
-              <ul>
-                {order.products.map(product => (
-                  <li key={product._id}>{product.name} - ${product.price}</li>
+            <article className="order-card" key={order._id}>
+              <div className="order-card-header">
+                <div>
+                  <p className="order-label">ORDER ID</p>
+                  <h2>#{order._id.slice(-8).toUpperCase()}</h2>
+                </div>
+                <span className={`order-status status-${order.status.toLowerCase()}`}>{order.status}</span>
+              </div>
+
+              <div className="order-meta">
+                <span><FaCalendarAlt /> {new Date(order.createdAt).toLocaleDateString()}</span>
+                <span><FaMapMarkerAlt /> {order.shippingAddress?.city || 'Shipping address saved'}</span>
+              </div>
+
+              <div className="order-products">
+                {order.products.map((product, index) => (
+                  <div className="order-product" key={product._id || `${order._id}-${index}`}>
+                    <div className="order-product-icon"><FaBoxOpen /></div>
+                    <div>
+                      <strong>{product.name}</strong>
+                      <p>Qty {product.quantity} x ₹{product.price.toFixed(2)}</p>
+                    </div>
+                    <strong>₹{(product.price * product.quantity).toFixed(2)}</strong>
+                  </div>
                 ))}
-              </ul>
-            </li>
+              </div>
+
+              <div className="order-total">
+                <span>Total paid</span>
+                <strong>₹{order.totalAmount.toFixed(2)}</strong>
+              </div>
+            </article>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

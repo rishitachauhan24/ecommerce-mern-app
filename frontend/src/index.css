@@ -208,6 +208,11 @@ a:hover {
 
 .btn-primary:hover:not(:disabled) {
     background-color: var(--primary-hover);
+    color: white;
+}
+
+.btn-primary:visited {
+    color: white;
 }
 
 .btn-secondary {
@@ -237,6 +242,10 @@ a:hover {
 .btn-outline:hover:not(:disabled) {
     background-color: var(--primary-color);
     color: white;
+}
+
+.btn-outline:visited {
+    color: var(--primary-color);
 }
 
 /* Forms */
@@ -467,6 +476,11 @@ tbody tr:hover {
     color: var(--text-secondary);
 }
 
+.contact-hero h1,
+.contact-hero p {
+    color: white;
+}
+
 /* Loading and Empty States */
 .loading {
     text-align: center;
@@ -507,6 +521,190 @@ tbody tr:hover {
 .empty-state h2 {
     color: var(--text-secondary);
     margin-bottom: 1rem;
+}
+
+/* Order History */
+.order-history-page {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+}
+
+.order-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.eyebrow, .order-label {
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+
+.order-history-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.order-history-subtitle {
+    color: var(--text-secondary);
+}
+
+.order-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.order-count strong {
+    font-size: 1.25rem;
+    color: var(--dark);
+}
+
+.order-count span {
+    color: var(--text-secondary);
+}
+
+.orders-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.order-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.order-card-header, .order-meta, .order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.order-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.order-label {
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.order-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.status-pending { background: #fef3c7; color: #92400e; }
+.status-processing, .status-shipped { background: #dbeafe; color: #1e40af; }
+.status-delivered { background: #d1fae5; color: #065f46; }
+.status-cancelled { background: #fee2e2; color: #991b1b; }
+
+.order-meta {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    background: #fafafa;
+}
+
+.order-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.order-products {
+    padding: 0 1.5rem;
+}
+
+.order-product {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-product-icon, .empty-icon {
+    display: grid;
+    place-items: center;
+    color: var(--primary-color);
+    background: #eff6ff;
+    border-radius: 0.5rem;
+}
+
+.order-product-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.order-product p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+}
+
+.order-total {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.order-total strong {
+    color: var(--primary-color);
+    font-size: 1.35rem;
+}
+
+.order-empty-state {
+    max-width: 560px;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.empty-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.25rem;
+    font-size: 2rem;
+}
+
+.order-empty-state h2 {
+    margin-bottom: 0.5rem;
+}
+
+.order-empty-state p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
 /* Admin Dashboard */
@@ -623,5 +821,19 @@ tbody tr:hover {
     .form-container {
         margin: 1rem;
         padding: 1.5rem;
+    }
+
+    .order-history-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .order-count {
+        align-self: stretch;
+    }
+
+    .order-card-header {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }

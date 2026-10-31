@@ -48,7 +48,7 @@ const ManageOrders = () => {
             <tr key={order._id}>
               <td>{order._id}</td>
               <td>{order.userId}</td>
-              <td>${order.totalAmount.toFixed(2)}</td>
+              <td>₹{order.totalAmount.toFixed(2)}</td>
               <td>{order.status}</td>
               <td>
                 <select 
